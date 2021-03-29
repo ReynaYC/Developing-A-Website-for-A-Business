@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Home | Sunrise</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <style media="screen">
+  h2  { font-family: Arial, Verdana, sans-serif;
+        color: black;
+        font-weight: bold;
+        padding: 20px;
+        text-align: center;}
+  /* The Modal */
+
+          .close	{
+          	     color: black;
+          	     float: right;
+          	     font-size: 20px;
+          	}
+
+        /* Add Animation */
+        @-webkit-keyframes fadeIn  /* ? */
+          {
+                 from {opacity: 0;}
+                 to {opacity: 1;}
+          }
+
+        @keyframes fadeIn
+          {
+                 from {opacity: 0;}
+                 to {opacity: 1;}
+          }
+
+          .row::after {
+                        content: "";
+                        clear: both;
+                        display: table;
+                                      }
+
+    @media only screen and (min-width: 601px) {
+      .column1 	{
+            	     float: left;
+            	     width: 50%;		/* 30% is approximately 270 pixels */
+            	     padding: 5px;
+                   text-align: center;
+
+            	}
+      .modal    {
+                    …
+                   margin: auto;
+                   -webkit-animation-name: fadeIn;       /* Fade in the modal */
+                   -webkit-animation-duration: 3s;
+                   animation-name: fadeIn;
+                   animation-duration: 3s;
+                   position: fixed;
+                   top:45%;
+                   display: none;
+                   z-index: 10;
+                   left: 50%;
+                   transform: translate(-50%, -50%);
+                   width: 40%;			/* modal should span 80% of width */
+                   height: 30%;
+                   background-color: yellow;
+                   padding: 20px;
+                   text-align: center;
+                   	/* aquamarine color */
+
+              }
+
+    }
+    @media only screen and (max-width: 600px) {
+      .column1 	{
+            	     float: left;
+            	     width: 100%;		/* 30% is approximately 270 pixels */
+            	     padding: 5px;
+                   text-align: center;
+
+            	}
+      .modal    {
+                    …
+                   margin: auto;
+                   -webkit-animation-name: fadeIn;       /* Fade in the modal */
+                   -webkit-animation-duration: 3s;
+                   animation-name: fadeIn;
+                   animation-duration: 3s;
+                   position: fixed;
+                   top:25%;
+                   display: none;
+                   z-index: 10;
+                   left: 50%;
+                   transform: translate(-50%, -50%);
+
+                   background-color: yellow;
+                   padding: 20px;
+                   text-align: center;
+                   	/* aquamarine color */
+
+              }
+
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="logo">
+    <img class="centered" src="sunriselogo.jpg" height = "60" width="120" title ="sunriselogo" alt="logo of Sunrise"/>
+    <img class="centered" src="sunrise.jpg" height = "60" width="180" title ="sunriselogo" alt="logo of Sunrise"/>
+  </div>
+
+  <div class="navbar">
+    <a class="active red" href="index.html">Home</a>
+    <a href="About.html">About</a>
+    <a href="Products.html">Products</a>
+    <a href="Contact.html">Contact</a>
+    <a href="SignUp.html">SignUp</a>
+  </div>
+  <h1>
+    POWERING SMART LIVING
+  </h1>
+  <a href="Products.html"><img src="homepage_img.jpg" height = "auto" width="100%" alt="picture of Smart Home"/></a>
+
+  <div id="myModal" class="modal">
+        <span id="mySpan" class="close">&times</span>
+        <a href="SignUp.html" style="text-decoration: none;">
+        <h2>
+           Click here to sign up for our newsletter!</h2>
+        <img src="heart.jpg" height = "50" width="80" alt="picture of Heart"/>
+        </a>
+  </div>
+  <div class="row">
+    <div class="column1">
+        <h3>AUDIO</h3>
+
+        <audio controls>
+          <source src="smarthomeaudio.mp3" type="audio/mp3">
+                      Your browser does not support the audio element.
+        </audio>
+
+       </div>
+
+<div class="column1">
+      <h3>VIDEO</h3>
+      <p>
+      <iframe width="100%" height="400" src="https://www.youtube.com/embed/OrQvqu80_vk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </p>
+
+</div>
+</div>
+<script>
+          var modal = document.getElementById("myModal");
+          var spn = document.getElementsByClassName("close")[0];
+          setTimeout(function() { modal.style.display = "block"; }, 1000);
+          spn.onclick = function() { modal.style.display = "none"; }
+</script>
+
+<div class = "footer">
+    <p>
+      © 2021 Sunrise Inc – All rights reserved.
+    </p>
+  </div>
+
+</body>
+</html>

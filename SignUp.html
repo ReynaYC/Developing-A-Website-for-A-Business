@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SignUp | Sunrise</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <style>
+
+p {text-align: center;
+}
+
+.data{
+  text-align: center;
+}
+.button{
+  text-align: center;
+}
+</style>
+<script type="text/javascript">
+  var $ = function ( id ) { return document.getElementById( id ); }
+
+
+  var validate = function()
+  {
+    var first = document.getElementById("first").value;
+    var last = document.getElementById("last").value;
+    var phone = document.getElementById("phone").value;
+    var email = document.getElementById("email").value;
+    var errors = "";
+
+
+    if ( first == "" )
+      errors += "You must enter a first name. \n";
+    if ( last == "" )
+      errors += "You must enter a last name. \n";
+    if ( phone == "" )
+        errors += "You must enter an phone number. \n";
+    if ( email == "" )
+      errors += "You must enter an email address. \n";
+
+    if ( errors == "" )
+    {
+      alert( "Thank you, click 'OK' to go to the next page." );	// Form data is valid
+      return true;
+    }
+    else
+    {
+      alert( errors );
+      return false;
+    }
+
+  }
+
+  window.onload = function()
+  {
+    document.getElementById("submit").onclick = validate;
+  }
+</script>
+</head>
+
+<body>
+  <div class="logo">
+    <img class="centered" src="sunriselogo.jpg" height = "60" width="120" title ="sunriselogo" alt="logo of Sunrise"/>
+    <img class="centered" src="sunrise.jpg" height = "60" width="180" title ="sunriselogo" alt="logo of Sunrise"/>
+  </div>
+
+  <div class="navbar">
+    <a class="active" href="index.html">Home</a>
+    <a href="About.html">About</a>
+    <a href="Products.html">Products</a>
+    <a href="Contact.html">Contact</a>
+    <a href="SignUp.html">SignUp</a>
+  </div>
+  <h1>
+    SIGN UP
+  </h1>
+  <p>
+    Please fill in this form to create an account and opt in our monthly newsletter!
+  </p>
+  <form action="http://yingc.sgedu.site/signup1.php" method="get">
+     <div class="data">
+  	   <label for="first">First Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</label> <!-- ? -->
+  	   <input type="text" id="first" name = "firstname"> <br>
+       <br>
+  	   <label for="last">Last Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</label>
+  	   <input type="text" id="last" name="lastname" > <br>
+       <br>
+       <label for="phone">Phone&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</label>
+  	   <input type="text" id="phone" name="phone" > <br>
+       <br>
+  	   <label for="email">Email Address:</label>
+  	   <input type="text" id="email" name="email" ><br>
+       <br>
+     </div>
+    <div class="button">
+    <input type="submit" id="submit" value="Submit" />
+    </div>
+  </form>
+  <br>
+  <div class = "footer">
+    <p>
+      © 2021 Sunrise Inc – All rights reserved.
+    </p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Order | Sunrise</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+<style media="screen">
+  h2 {
+    text-align: center;
+  }
+  p {
+     text-align: center;
+     color:red;
+   }
+  table, th, td {
+  border: 1px solid black;
+  text-align: center;
+  width: 40%;
+  margin:auto;
+
+}
+
+  .data input	{
+            margin-left: 1em;
+            margin-bottom: .5em;
+          }
+
+
+    .button		{
+            margin-left: 16em;
+            padding-top: .5em;
+          }
+  .form{
+    width:100%;
+    margin:auto;
+    text-align: center;
+  }
+  </style>
+  <script type="text/javascript">
+
+    // This function, named $, gets an element from the DOM based
+    // on the id that's passed to it. It represents a reference to
+    // the element that can be used to manipulate the value of the
+    // element.
+    var $ = function ( id ) { return document.getElementById( id ); }
+
+
+    var validate = function()
+    {
+
+      var first = $("fname").value;
+      var last = $("lname").value;
+      var address = $("address").value;
+      var phone = $("phone").value;
+      var email = $("email").value;
+      var orderdate = $("orderdate").value;
+      var payment = $("payment").value;
+      var errors = "";
+
+      if (Boolean($("Item1").checked) == false && Boolean($("Item2").checked) == false
+      && Boolean($("Item3").checked) == false && Boolean($("Item4").checked) == false
+      && Boolean($("Item5").checked) == false && Boolean($("Item6").checked) == false
+      && Boolean($("Item7").checked) == false && Boolean($("Item8").checked) == false
+      && Boolean($("Item9").checked) == false && Boolean($("Item10").checked) == false
+    )
+      {
+        errors += "You must make a product selection. \n";
+      }
+      if ( first == "" )
+        errors += "You must enter a first name. \n";
+      if ( last == "" )
+        errors += "You must enter a last name. \n";
+      if ( address == "" )
+          errors += "You must enter an address. \n";
+      if ( phone == "" )
+         errors += "You must enter an phone number. \n";
+      if ( email == "" )
+        errors += "You must enter an email address. \n";
+      if ( orderdate == "" )
+          errors += "You must enter an order date. \n";
+      if ( payment== "" )
+        errors += "You must select a method of payment. \n";
+
+      if ( errors == "" )
+      {
+        alert( "Thank you for submitting your order! Click 'OK' to go to the order detail page." );	// Form data is valid
+        return true;
+      }
+      else
+      {
+        alert( errors );
+        return false;
+      }
+
+    }
+
+    window.onload = function()
+    {
+      $("subscribe").onclick = validate;
+      $("reset").onclick = reset;
+    }
+
+    var reset = function()
+    {
+      $("first").value = "";
+      $("last").value = "";
+      $("address").value = "";
+      $("phone").value = "";
+      $("email").value = "";
+      $("orderdate").value = "";
+      $("payment").value = "";
+    }
+  </script>
+</head>
+<body>
+  <div class="logo">
+    <img class="centered" src="sunriselogo.jpg" height = "60" width="120" title ="sunriselogo" alt="logo of Sunrise"/>
+    <img class="centered" src="sunrise.jpg" height = "60" width="180" title ="sunriselogo" alt="logo of Sunrise"/>
+  </div>
+
+  <div class="navbar">
+    <a class="active" href="index.html">Home</a>
+    <a href="About.html">About</a>
+    <a href="Products.html">Products</a>
+    <a href="Contact.html">Contact</a>
+    <a href="SignUp.html">SignUp</a>
+  </div>
+  <h2>Please Select the Products you want, and enter the following data to order!</h2>
+  <p>Click the picture to see more details!</p>
+  <div class="orderform">
+  <form action="http://yingc.sgedu.site/collect.php"  method="get">
+
+
+    <div class="data">
+
+    <table>
+      <tr>
+        <th>Product</th>
+        <th>Picture</th>
+        <th>Price</th>
+        <th>Order</th>
+      </tr>
+      <tr>
+        <td>
+          Motorized Curtains
+        </td>
+        <td>
+          <a href="1.jpg">
+          <img src="1.jpg" height = "80" width="80" title = "Motorized Curtains" alt="picture of Smart Curtains"/></a>
+        </td>
+        <td>$200.00</td>
+        <td>
+          <input type="checkbox" name="items[]" id="Item1" value="Motorized Curtains"/>
+        </td>
+     </tr>
+
+     <tr>
+       <td>
+         Smart Fans
+       </td>
+       <td>
+         <a href="2.jpg">
+         <img src="2.jpg" height = "80" width="80" title = "Smart Fans" alt="picture of Smart Fans"/></a>
+       </td>
+       <td>$60.00</td>
+       <td>
+         <input type="checkbox" name="items[]" id="Item2" value="Smart Fans"/>
+       </td>
+    </tr>
+
+    <tr>
+      <td>
+        Smart Lamps
+      </td>
+      <td>
+        <a href="3.jpg">
+        <img src="3.jpg" height = "80" width="80" title = "Smart Lamps" alt="picture of Smart Lamps"/></a>
+      </td>
+      <td>$40.00</td>
+      <td>
+        <input type="checkbox" name="items[]" id="Item3" value="Smart Lamps"/>
+      </td>
+   </tr>
+
+   <tr>
+     <td>
+       Smart TVs
+     </td>
+     <td>
+       <a href="4.jpg">
+       <img src="4.jpg" height = "80" width="80" title = "Smart TVs" alt="picture of Smart TVs"/></a>
+     </td>
+     <td>$400.00</td>
+     <td>
+       <input type="checkbox" name="items[]" id="Item4"  value="Smart TVs"/>
+     </td>
+  </tr>
+
+  <tr>
+    <td>
+      Laundary Machine
+    </td>
+    <td>
+      <a href="5.jpg">
+      <img src="5.jpg" height = "80" width="80" title = "Laundary Machine" alt="picture of Laundary Machine"/></a>
+    </td>
+    <td>$600.00</td>
+    <td>
+      <input type="checkbox" name="items[]" id="Item5"  value="Laundary Machine"/>
+    </td>
+ </tr>
+
+ <tr>
+   <td>
+     Smart Cameras
+   </td>
+   <td>
+     <a href="6.jpg">
+     <img src="6.jpg" height = "80" width="80" title = "Smart Cameras" alt="picture of Smart Cameras"/></a>
+   </td>
+   <td>$70.00</td>
+   <td>
+     <input type="checkbox" name="items[]" id="Item6"  value="Smart Cameras"/>
+   </td>
+</tr>
+
+<tr>
+  <td>
+    Smart Door Locks
+  </td>
+  <td>
+    <a href="7.jpg">
+    <img src="7.jpg" height = "80" width="80" title = "Smart Door Locks" alt="picture of Smart Door Locks"/></a>
+  </td>
+  <td>$70.00</td>
+  <td>
+    <input type="checkbox" name="items[]" id="Item7"  value="Smart Door Locks"/>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    Smart Mattress
+  </td>
+  <td>
+    <a href="8.jpg">
+    <img src="8.jpg" height = "80" width="80" title = "Smart Mattress" alt="picture of Smart Mattress"/></a>
+  </td>
+  <td>$700.00</td>
+  <td>
+    <input type="checkbox" name="items[]" id="Item8"  value="Smart Mattress"/>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    Smart Plugs
+  </td>
+  <td>
+    <a href="9.jpg">
+    <img src="9.jpg" height = "80" width="80" title = "Smart Plugs" alt="picture of Smart Plugs"/></a>
+  </td>
+  <td>$20.00</td>
+  <td>
+    <input type="checkbox" name="items[]" id="Item9"  value="Smart Plugs"/>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    Smart Speaker
+  </td>
+  <td>
+    <a href="10.jpg">
+    <img src="10.jpg" height = "80" width="80" title = "Smart Speaker" alt="picture of Smart Speaker"/></a>
+  </td>
+  <td>$40.00</td>
+  <td>
+    <input type="checkbox" name="items[]" id="Item10"  value="Smart Speaker"/>
+  </td>
+</tr>
+</table>
+</div>
+
+   <br>
+   <br>
+    <div class="form">
+
+    <label for="first">First Name:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <input type="text" id="fname" name="firstName" /> <br />
+    <br>
+    <label for="last">Last Name:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <input type="text" id="lname" name="lastName" /><br />
+    <br>
+    <label for="address">Address:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <input type="text" id="address" name="address" ><br />
+    <br>
+    <label for="phone">Phone:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <input type="text" id="phone" name="phone" ><br />
+    <br>
+    <label for="email">Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <input type="text" id="email" name="email" ><br/>
+    <br>
+    <label for="orderdate">Date of Order:</label>
+    <input type="text" id="orderdate" name="orderdate" placeholder="MM-DD-YY"/><br>
+    <br>
+
+    <label for="payment">Method of Payment:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      <select id="payment" name="payment" style="width:120px">
+        <option value="VISA">VISA</option>
+        <option value="MasterCard">MaserCard</option>
+        <option value="PayPal">Paypal</option>
+      </select>
+    <br>
+    <div class="button">
+    <input type="submit" id="subscribe" value="Submit" />
+    <input type="reset" id="reset" value="Reset" />
+    </div>
+    </div>
+    </div>
+    </div>
+</form>
+</div>
+</body>
+</html>
